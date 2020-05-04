@@ -1,35 +1,74 @@
 package br.com.tokiomarine.seguradora.avaliacao.service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import br.com.tokiomarine.seguradora.avaliacao.entidade.Estudante;
 import br.com.tokiomarine.seguradora.avaliacao.repository.EstudanteRepository;
 
-// TODO Efetue a implementação dos métodos da classe service
-public class EstudanteServiceImpl implements EstudandeService {
+public class EstudanteServiceImpl implements EstudanteService {
 
-	EstudanteRepository repository;
+	@Autowired
+	private EstudanteRepository repository;
 
-	@Override
-	public void cadastrarEstudante(@Valid Estudante estudante) {
+	// @Override
+	public Boolean cadastrarEstudante(@Valid Estudante estudante) {
 
+		if (repository.save(estudante) != null) {
+			return Boolean.TRUE;
+		}
+
+		return Boolean.FALSE;
 	}
 
-	@Override
-	public void atualizarEstudante(@Valid Estudante estudante) {
+	// @Override
+	public Boolean atualizarEstudante(@Valid Estudante estudante) {
 
+		if (repository.save(estudante) != null) {
+			return Boolean.TRUE;
+		}
+
+		return Boolean.FALSE;
 	}
 
-	@Override
+	// @Override
 	public List<Estudante> buscarEstudantes() {
-		return null;
+		Iterable<Estudante> it = repository.findAll();
+
+		List<Estudante> estudantes = new ArrayList<Estudante>();
+
+		for (Estudante e : it) {
+			estudantes.add(e);
+		}
+
+		return estudantes;
 	}
 
-	@Override
+	// @Override
 	public Estudante buscarEstudante(long id) {
-		throw new IllegalArgumentException("Identificador inválido:" + id);
+
+		Estudante e = null;
+
+		if (id == 0) {
+			throw new IllegalArgumentException("Identificador inválido:" + id);
+		}
+
+		return repository.findEstudanteById(id);
+	}
+	
+	public Boolean apagarEstudante(Long id) {
+		
+		if(repository.deleteByID(id) != null) {
+			return Boolean.TRUE;
+		}
+		
+		return Boolean.FALSE;
+		
 	}
 
 }

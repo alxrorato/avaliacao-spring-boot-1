@@ -11,7 +11,7 @@ import br.com.tokiomarine.seguradora.avaliacao.entidade.Estudante;
 @Repository
 public interface EstudanteRepository extends CrudRepository<Estudante, Long> {
 
-	List<Estudante> findByName(String name);
+	List<Estudante> findByNome(String nome);
 
 	@Query(value = "select * from Estudante e where e.id = ?1", nativeQuery = true)
 	Estudante findEstudanteById(long id);

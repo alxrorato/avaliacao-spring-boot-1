@@ -1,12 +1,8 @@
 
-Candidato: Carlos Atsuchi Matsuo
+Candidato: Alexandre Rorato Carneiro
 
 Observação:
 
-1. Não tenho domínio de Themeleaf.
+1. Não tenho domínio de Themeleaf e por isso não fiz a parte de front-end.
 
-2. Ítem 11 do teste, usei , porém é necessário capturar o "MethodArgumentNotValidException", similar à classe
-"ErrorHandle" que está em "br.com.tokiomarine.seguradora.avaliacao.entidade". 
-
-3. Ítem 14 do teste, usei "jpa-named-queries.properties" em "sr/main/resources/META-INF". E está associado à
-esta query na Classe "EstudanteRepository.java".
+2. No projeto que baixei já estava implementada a classe Estudante, inclusive com os campos matricula e curso

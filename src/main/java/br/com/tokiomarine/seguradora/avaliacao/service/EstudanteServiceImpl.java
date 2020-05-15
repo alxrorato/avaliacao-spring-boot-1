@@ -7,10 +7,12 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.tokiomarine.seguradora.avaliacao.entidade.Estudante;
 import br.com.tokiomarine.seguradora.avaliacao.repository.EstudanteRepository;
 
+@Service
 public class EstudanteServiceImpl implements EstudanteService {
 
 	@Autowired

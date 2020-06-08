@@ -65,12 +65,15 @@ public class EstudanteServiceImpl implements EstudanteService {
 	
 	public Boolean apagarEstudante(Long id) {
 		
+		repository.deleteByID(id);
+		return Boolean.TRUE;
+		/*
 		if(repository.deleteByID(id) != null) {
 			return Boolean.TRUE;
 		}
 		
 		return Boolean.FALSE;
-		
+		*/		
 	}
 
 }

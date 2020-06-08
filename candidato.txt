@@ -3,6 +3,4 @@ Candidato: Alexandre Rorato Carneiro
 
 Observação:
 
-1. Não tenho domínio de Themeleaf e por isso não fiz a parte de front-end.
-
-2. No projeto que baixei já estava implementada a classe Estudante, inclusive com os campos matricula e curso
+Não tenho domínio de Themeleaf e por isso não fiz a parte de front-end.

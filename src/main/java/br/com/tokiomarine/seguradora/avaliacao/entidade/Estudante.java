@@ -10,7 +10,8 @@ import javax.validation.constraints.NotNull;
 public class Estudante {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@NotNull
@@ -25,6 +26,20 @@ public class Estudante {
 	private String matricula;
 
 	private String curso;
+
+	public Estudante() {
+	}
+
+	public Estudante(Long id, @NotNull String nome, @NotNull String email, String telefone,
+			@NotNull(message = "Matrícula é obrigatória") String matricula, String curso) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.telefone = telefone;
+		this.matricula = matricula;
+		this.curso = curso;
+	}
 
 	public Long getId() {
 		return id;
